@@ -1,0 +1,21 @@
+﻿<Window x:Class="FirstFantasy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstFantasy"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock Name="TxtOutput" HorizontalAlignment="Left" Margin="341,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="253" Width="194" Background="#FFEED7D7"/>
+        <Button Name="BtnCreate" Content="Create" HorizontalAlignment="Left" Margin="133,180,0,0" VerticalAlignment="Top" Width="112" Click="BtnCreate_Click"/>
+        <ComboBox Name="CboxCharacter" HorizontalAlignment="Left" Margin="133,104,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="" IsSelected="True" />
+            <ComboBoxItem Content="Cleric" />
+            <ComboBoxItem Content="Fighter" />
+            <ComboBoxItem Content="Rouge" />
+            <ComboBoxItem Content="Wizard" />
+        </ComboBox>
+
+    </Grid>
+</Window>
