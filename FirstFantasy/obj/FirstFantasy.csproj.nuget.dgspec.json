@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Visual Studio\\FirstFantasy\\FirstFantasy.csproj": {}
+    "C:\\Users\\ACER\\Desktop\\parcial_2\\FirstFantasy\\FirstFantasy.csproj": {}
   },
   "projects": {
-    "E:\\Visual Studio\\FirstFantasy\\FirstFantasy.csproj": {
+    "C:\\Users\\ACER\\Desktop\\parcial_2\\FirstFantasy\\FirstFantasy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Visual Studio\\FirstFantasy\\FirstFantasy.csproj",
+        "projectUniqueName": "C:\\Users\\ACER\\Desktop\\parcial_2\\FirstFantasy\\FirstFantasy.csproj",
         "projectName": "FirstFantasy",
-        "projectPath": "E:\\Visual Studio\\FirstFantasy\\FirstFantasy.csproj",
-        "packagesPath": "C:\\Users\\CharliePC\\.nuget\\packages\\",
-        "outputPath": "E:\\Visual Studio\\FirstFantasy\\obj\\",
+        "projectPath": "C:\\Users\\ACER\\Desktop\\parcial_2\\FirstFantasy\\FirstFantasy.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Desktop\\parcial_2\\FirstFantasy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\CharliePC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,11 +1,10 @@
-﻿using FirstFantasy.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FirstFantasy.Classes.Equipment
 {
-    public class Sword : Weapon
+    public class Puños : Weapon
     {
         public override string Atacar()
         {
@@ -16,6 +15,4 @@ namespace FirstFantasy.Classes.Equipment
 
         }
     }
-        
-    
 }

@@ -30,68 +30,85 @@ namespace FirstFantasy
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
-            // String option = CboxCharacter.Text;
-
-            List<IDescribable> objectList = new List<IDescribable>();
-            objectList.Add(new Axe());
-            objectList.Add(new Potion());
-            objectList.Add(new Wizard { Level = 10 });
-
-            IDescribable i = new Fighter();
 
 
-            TxtOutput.Text = "";
-
-            foreach (IDescribable d in objectList)
-            {
-                TxtOutput.Text += d.ShowInformation()+"\n";
-            }
 
 
             /*
+                List<IDescribable> objectList = new List<IDescribable>();
+                objectList.Add(new Axe());
+                objectList.Add(new Potion());
+                objectList.Add(new Wizard { Level = 10 });
 
-            switch (option)
-            {
-                case "Cleric":
-                    myCharacter = new Cleric();
-                    break;
-
-                case "Fighter":
-                    myCharacter = new Fighter();
-                    break;
-
-                case "Rouge":
-                    myCharacter = new Rouge();
-                    break;
-
-                case "Wizard":
-                    myCharacter = new Wizard();
-                    break;
-
-                default:
-                    myCharacter = null;
-                    MessageBox.Show("You MUST select a type");
-                    break;
-
-            }
+                IDescribable i = new Fighter();
 
 
-            myCharacter.Name = "Solrac";
-            myCharacter.Level= 2;
-            myCharacter.Experience = 10000;
+                TxtOutput.Text = "";
 
-            if (myCharacter != null)
-            {
-
-                TxtOutput.Text = myCharacter.Taunt();
-
-                ((Wizard)myCharacter).CastSpell();
-
-            }
-
-
+                foreach (IDescribable d in objectList)
+                {
+                    TxtOutput.Text += d.ShowInformation()+"\n";
+                }
             */
 
+            Sword arma = new Sword();
+                Character myCharacter;
+                
+                String option = CboxCharacter.Text;
+                switch (option)
+                {
+                    case "Cleric":
+                        myCharacter = new Cleric();
+                        
+                        break;
+
+                    case "Fighter":
+                        myCharacter = new Fighter();
+                        
+                        break;
+
+                    case "Rouge":
+                        myCharacter = new Rouge();
+                        
+                        break;
+
+                    case "Wizard":
+                        myCharacter = new Wizard();
+                        
+                        break;
+
+                    default:
+                        myCharacter = null;
+                        MessageBox.Show("You MUST select a typ" +"e");
+                        break;
+
+                }
+            String option2 = CboxCharacter2.Text;
+            switch (option2)
+            {
+                case "":
+                    MessageBox.Show("You MUST select a aquipment");
+                    break;
+
+            }
+
+
+
+
+
+
+            if (myCharacter != null && option2!="")
+                {
+                    myCharacter.Name = "Solrac";
+                    myCharacter.Level = 2;
+                    myCharacter.Experience = 10000;
+                    TxtOutput.Text = myCharacter.Taunt()+"\n Damage: "+arma.Atacar();
+
+                }
+
+
+
+                
 
         }
     }

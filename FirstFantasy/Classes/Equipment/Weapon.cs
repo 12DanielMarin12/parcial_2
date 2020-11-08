@@ -11,6 +11,8 @@ namespace FirstFantasy.Classes.Equipment
         {
             return "This is a weapon";
         }
+        public abstract string Atacar();
+        
 
     }
 }
