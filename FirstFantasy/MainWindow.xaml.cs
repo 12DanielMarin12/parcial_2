@@ -33,11 +33,11 @@ namespace FirstFantasy
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         { 
 
-            Sword arma = new Sword();
+            Sword weapon = new Sword();
                 Character myCharacter;
                 
-                String option = CboxCharacter.Text;
-                switch (option)
+                String character = CboxCharacter.Text;
+                switch (character)
                 {
                     case "Cleric":
                         myCharacter = new Cleric();
@@ -65,23 +65,23 @@ namespace FirstFantasy
                         break;
 
                 }
-            String option2 = CboxWeapon.Text;
-            switch (option2)
+            String arma = CboxWeapon.Text;
+            switch (arma)
             {
                 case "":
                     MessageBox.Show("You MUST select a aquipment");
                     break;
 
             }
+            string armadura = CboxArmor.Text;
 
-             
-
-            if (myCharacter != null && option2!="")
+            //INVENTARIO
+            if (myCharacter != null && arma != "")
             {
                 myCharacter.Name = "Solrac";
                 myCharacter.Level = 2;
                 myCharacter.Experience = 10000;
-                TxtOutput.Text = myCharacter.Taunt()+"\n Damage: "+arma.Atacar()+ "\n\nINVENTARIO:\n";
+                TxtOutput.Text = myCharacter.Taunt() + "\nArmadura:" + armadura +"\nArma:"+arma+ "\nDamage:" +weapon.Atacar()+ "\n\nINVENTARIO:\n";
 
                 List<IDescribable> objectList = new List<IDescribable>();
                 objectList.Add(new Potion());
@@ -93,7 +93,7 @@ namespace FirstFantasy
                 }
             }
 
-
+            
 
            
              
