@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBlock Name="TxtOutput" HorizontalAlignment="Left" Margin="341,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="253" Width="194" Background="#FFEED7D7"/>
-        <Button Name="BtnAttack" Content="Attack" HorizontalAlignment="Left" Margin="171,264,0,0" VerticalAlignment="Top" Width="112" Click="BtnCreate_Click" Background="#FFFF6262"/>
+        <Button Name="BtnAttack" Content="Attack" HorizontalAlignment="Left" Margin="167,264,0,0" VerticalAlignment="Top" Width="116" Click="BtnCreate_Click" Background="#FFFF6262" Height="21"/>
         <ComboBox Name="CboxCharacter" HorizontalAlignment="Left" Margin="167,120,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="" IsSelected="True" />
             <ComboBoxItem Content="Cleric" />
@@ -34,5 +34,10 @@
             <ComboBoxItem Content="Parchments" />
             <ComboBoxItem Content="Keys" />
         </ComboBox>
+        <Button Name="BtnSave" Content="Save" HorizontalAlignment="Left" Height="24" Margin="169,204,0,0" VerticalAlignment="Top" Width="116"/>
+        <Button Name="BtnLoad" Content="Load" HorizontalAlignment="Left" Height="23" Margin="167,236,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox HorizontalAlignment="Left" Height="22" Margin="589,153,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="589,180,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="589,208,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
