@@ -9,7 +9,7 @@ namespace FirstFantasy.Classes.Equipment
     {
         public string ShowInformation()
         {
-            return "This is a weapon";
+            return "This is a weapon, use it wisely to protect your loved ones";
         }
         public abstract string Atacar();
         

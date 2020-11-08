@@ -9,7 +9,7 @@ namespace FirstFantasy.Classes.Equipment
     {
         public string ShowInformation()
         {
-            return "This is a strange potion";
+            return "This is a strange potion,Who knows what he will do, drink it to find out";
         }
     }
 }

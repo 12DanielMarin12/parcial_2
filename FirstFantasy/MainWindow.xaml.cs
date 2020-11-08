@@ -21,8 +21,10 @@ namespace FirstFantasy
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -34,22 +36,7 @@ namespace FirstFantasy
 
 
 
-            /*
-                List<IDescribable> objectList = new List<IDescribable>();
-                objectList.Add(new Axe());
-                objectList.Add(new Potion());
-                objectList.Add(new Wizard { Level = 10 });
-
-                IDescribable i = new Fighter();
-
-
-                TxtOutput.Text = "";
-
-                foreach (IDescribable d in objectList)
-                {
-                    TxtOutput.Text += d.ShowInformation()+"\n";
-                }
-            */
+            
 
             Sword arma = new Sword();
                 Character myCharacter;
@@ -98,18 +85,36 @@ namespace FirstFantasy
 
 
             if (myCharacter != null && option2!="")
-                {
-                    myCharacter.Name = "Solrac";
-                    myCharacter.Level = 2;
-                    myCharacter.Experience = 10000;
-                    TxtOutput.Text = myCharacter.Taunt()+"\n Damage: "+arma.Atacar();
+            {
+                myCharacter.Name = "Solrac";
+                myCharacter.Level = 2;
+                myCharacter.Experience = 10000;
+                TxtOutput.Text = myCharacter.Taunt()+"\n Damage: "+arma.Atacar()+ "\n\nINVENTARIO:\n";
 
-                }
-
-
-
+                List<IDescribable> objectList = new List<IDescribable>();
+                objectList.Add(new Potion());
+                objectList.Add(new Axe());
                 
+                foreach (IDescribable d in objectList)
+                {
+                    TxtOutput.Text +=   d.ShowInformation() + "\n\n";
+                }
+            }
+
+
+
+           
+             
+
+            
+
+            
+
+
+
 
         }
+
+         
     }
 }
