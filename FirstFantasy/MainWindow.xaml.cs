@@ -31,12 +31,7 @@ namespace FirstFantasy
         }
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
-        {
-
-
-
-
-            
+        { 
 
             Sword arma = new Sword();
                 Character myCharacter;
@@ -70,7 +65,7 @@ namespace FirstFantasy
                         break;
 
                 }
-            String option2 = CboxCharacter2.Text;
+            String option2 = CboxWeapon.Text;
             switch (option2)
             {
                 case "":
@@ -79,10 +74,7 @@ namespace FirstFantasy
 
             }
 
-
-
-
-
+             
 
             if (myCharacter != null && option2!="")
             {

@@ -6,21 +6,33 @@
         xmlns:local="clr-namespace:FirstFantasy"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-	<Grid>
-		<TextBlock Name="TxtOutput" HorizontalAlignment="Left" Margin="341,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="253" Width="194" Background="#FFEED7D7"/>
-		<Button Name="BtnAttack" Content="Attack" HorizontalAlignment="Left" Margin="171,264,0,0" VerticalAlignment="Top" Width="112" Click="BtnCreate_Click"/>
-		<ComboBox Name="CboxCharacter" HorizontalAlignment="Left" Margin="167,120,0,0" VerticalAlignment="Top" Width="120">
-			<ComboBoxItem Content="" IsSelected="True" />
-			<ComboBoxItem Content="Cleric" />
-			<ComboBoxItem Content="Fighter" />
-			<ComboBoxItem Content="Rouge" />
-			<ComboBoxItem Content="Wizard" />
-		</ComboBox>
-		<ComboBox Name="CboxCharacter2" HorizontalAlignment="Left" Margin="167,183,0,0" VerticalAlignment="Top" Width="120">
-			<ComboBoxItem Content="" IsSelected="True" />
-			<ComboBoxItem Content="Puños" />
-			<ComboBoxItem Content="Sword" />
-			<ComboBoxItem Content="Axe" />
-		</ComboBox>
-		</Grid>
+    <Grid>
+        <TextBlock Name="TxtOutput" HorizontalAlignment="Left" Margin="341,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="253" Width="194" Background="#FFEED7D7"/>
+        <Button Name="BtnAttack" Content="Attack" HorizontalAlignment="Left" Margin="171,264,0,0" VerticalAlignment="Top" Width="112" Click="BtnCreate_Click" Background="#FFFF6262"/>
+        <ComboBox Name="CboxCharacter" HorizontalAlignment="Left" Margin="167,120,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="" IsSelected="True" />
+            <ComboBoxItem Content="Cleric" />
+            <ComboBoxItem Content="Fighter" />
+            <ComboBoxItem Content="Rouge" />
+            <ComboBoxItem Content="Wizard" />
+        </ComboBox>
+        <ComboBox Name="CboxWeapon" HorizontalAlignment="Left" Margin="167,142,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="" IsSelected="True" />
+            <ComboBoxItem Content="Puños" />
+            <ComboBoxItem Content="Sword" />
+            <ComboBoxItem Content="Axe" />
+        </ComboBox>
+        <ComboBox Name="CboxArmor" HorizontalAlignment="Left" Margin="167,164,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Diamond" />
+            <ComboBoxItem Content="Iron" />
+            <ComboBoxItem Content="Leather" />
+            <ComboBoxItem Content="Adamantite" />
+        </ComboBox>
+        <ComboBox Name="CboxItems" HorizontalAlignment="Left" Margin="589,126,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Potions" />
+            <ComboBoxItem Content="GoldsCoins" />
+            <ComboBoxItem Content="Parchments" />
+            <ComboBoxItem Content="Keys" />
+        </ComboBox>
+    </Grid>
 </Window>
