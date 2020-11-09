@@ -1,4 +1,5 @@
 ﻿using FirstFantasy.Classes.Equipment;
+using FirstFantasy.Classes.Equipment.Armadura;
 using FirstFantasy.Classes.Player;
 using FirstFantasy.Interfaces;
 using System;
@@ -31,9 +32,9 @@ namespace FirstFantasy
         }
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
-        { 
+        {
 
-            Sword weapon = new Sword();
+            
                 Character myCharacter;
                 
                 String character = CboxCharacter.Text;
@@ -65,48 +66,119 @@ namespace FirstFantasy
                         break;
 
                 }
+            
+            Weapon weapons = null;
             String arma = CboxWeapon.Text;
             switch (arma)
             {
+                case "Axe":
+                    weapons = new Axe();
+                    break;
+                case "Sword":
+                    weapons = new Sword();
+                    break;
+                case "Fists":
+                    weapons = new Fists();
+                    break;
+                
                 case "":
                     MessageBox.Show("You MUST select a aquipment");
                     break;
 
             }
-            string armadura = CboxArmor.Text;
+            Armor meArmor=null;
+            String armadura = CboxArmor.Text;
+            switch (armadura)
+            {
+                case "Diamond":
+                    meArmor = new Diamond();
+                    break;
+                case "Adamantite":
+                    meArmor = new Adamantite();
+                    break;
+                case "Iron":
+                    meArmor = new Iron();
+                    break;
+                case "Leather":
+                    meArmor = new Leather();
+                    break;
+                case "":
+                    MessageBox.Show("You MUST select a Armor");
+                    break;
+            }
 
-            //INVENTARIO
+
+
+
+
+
+
+
             if (myCharacter != null && arma != "")
             {
-                myCharacter.Name = "Solrac";
-                myCharacter.Level = 2;
-                myCharacter.Experience = 10000;
-                TxtOutput.Text = myCharacter.Taunt() + "\nArmadura:" + armadura +"\nArma:"+arma+ "\nDamage:" +weapon.Atacar()+ "\n\nINVENTARIO:\n";
-
-                List<IDescribable> objectList = new List<IDescribable>();
-                objectList.Add(new Potion());
-                objectList.Add(new Axe());
-                
-                foreach (IDescribable d in objectList)
+                if (armadura != null)
                 {
-                    TxtOutput.Text +=   d.ShowInformation() + "\n\n";
+                    //NOMBRAMIENTOS
+                    myCharacter.Name = "sola";
+                    myCharacter.Level = 2;
+                    myCharacter.Experience = 10000;
+                    //EQUIPAMENTO
+                    TxtOutput.Text = myCharacter.Taunt() + "\nArma:" + arma + "\n armadura: " + armadura + "\nDamage:" + weapons.Atacar()  + "\n\nINVENTARIO:\n";
+
+                    //DESCRIPCION DE INVENTARIO
+                    List<IDescribable> objectList = new List<IDescribable>();
+                    objectList.Add(new Potion());
+
+                    foreach (IDescribable d in objectList)
+                    {
+                        TxtOutput.Text += d.ShowInformation() + "\n\n";
+                    }
                 }
             }
 
-            
+            //{
+            //    case "Sword":
+            //        weapons = new Sword();
+            //        break;
+            //    case "":
+            //        MessageBox.Show("You MUST select a aquipment");
+            //        break;
 
-           
-             
+            //}
+            //string armadura = CboxArmor.Text;
 
-            
+            ////NOMBRES
+            //string NameArmor =TbArm.Text;
+            //string NameWeapon =TbWea.Text;
+            //string NameCharacter =TbCha.Text;
 
-            
+
+
+            //    //INVENTARIO
+            //    List<IDescribable> objectList = new List<IDescribable>();
+            //    objectList.Add(new Potion());
+            //    objectList.Add(new Axe());
+
+            //    foreach (IDescribable d in objectList)
+            //    {
+            //        TxtOutput.Text +=   d.ShowInformation() + "\n\n";
+            //    }
+            //}
+
+
+
+
+
+
+
+
+
 
 
 
 
         }
 
-         
+
     }
 }

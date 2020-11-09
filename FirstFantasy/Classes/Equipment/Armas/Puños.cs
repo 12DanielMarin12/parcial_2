@@ -4,8 +4,13 @@ using System.Text;
 
 namespace FirstFantasy.Classes.Equipment
 {
-    public class Puños : Weapon
+    public class Fists : Weapon
     {
+        public override string ShowInformation()
+        {
+            return "these hands are lethal";
+
+        }
         public override string Atacar()
         {
 

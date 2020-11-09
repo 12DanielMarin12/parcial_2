@@ -1,12 +1,16 @@
-﻿using FirstFantasy.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FirstFantasy.Classes.Equipment
 {
-    public class Sword : Weapon
+    public class Axe : Weapon
     {
+        public override string ShowInformation()
+        {
+            return "this axe is sharp";
+
+        }
         public override string Atacar()
         {
 
@@ -16,6 +20,4 @@ namespace FirstFantasy.Classes.Equipment
 
         }
     }
-        
-    
 }
