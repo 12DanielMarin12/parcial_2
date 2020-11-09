@@ -124,7 +124,7 @@ namespace FirstFantasy
                     //DESCRIPCION DE INVENTARIO
 
                     
-
+                    //*S*
                     foreach (IDescribable d in objectList)
                     {
                         TxtOutput.Text += d.ShowInformation() + "\n\n";
@@ -233,7 +233,7 @@ namespace FirstFantasy
             TxtOutput.Text = "";
             foreach (string d in personjes)
             {
-                TxtOutput.Text += d + "\n";
+                TxtOutput.Text = d + "\n";
             }
         }
 
