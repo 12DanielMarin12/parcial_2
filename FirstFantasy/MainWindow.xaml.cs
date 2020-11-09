@@ -25,17 +25,20 @@ namespace FirstFantasy
     
     public partial class MainWindow : Window
     {
+        List<string> personjes = new List<string>();
+
        
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void BtnCreate_Click(object sender, RoutedEventArgs e)
+        public void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
 
             
-                Character myCharacter;
+                Character myCharacter=null;
                 
                 String character = CboxCharacter.Text;
                 switch (character)
@@ -109,19 +112,11 @@ namespace FirstFantasy
 
 
 
-
-
-
-
-
             if (myCharacter != null && arma != "")
             {
                 if (armadura != null)
                 {
-                    //NOMBRAMIENTOS
-                    myCharacter.Name = "sola";
-                    myCharacter.Level = 2;
-                    myCharacter.Experience = 10000;
+                    
                     //EQUIPAMENTO
                     TxtOutput.Text = myCharacter.Taunt() + "\nArma:" + arma + "\n armadura: " + armadura + "\nDamage:" + weapons.Atacar()  + "\n\nINVENTARIO:\n";
 
@@ -135,50 +130,113 @@ namespace FirstFantasy
                     }
                 }
             }
+            string NameCharacter = TbCha.Text;
+            string NameWeapon = TbWea.Text;
+            String NameArmor = TbArm.Text;
 
-            //{
-            //    case "Sword":
-            //        weapons = new Sword();
-            //        break;
-            //    case "":
-            //        MessageBox.Show("You MUST select a aquipment");
-            //        break;
+            meArmor.Name = NameArmor;
+            myCharacter.Name = NameCharacter;
+            weapons.Name = NameWeapon;
 
-            //}
-            //string armadura = CboxArmor.Text;
-
-            ////NOMBRES
-            //string NameArmor =TbArm.Text;
-            //string NameWeapon =TbWea.Text;
-            //string NameCharacter =TbCha.Text;
-
-
-
-            //    //INVENTARIO
-            //    List<IDescribable> objectList = new List<IDescribable>();
-            //    objectList.Add(new Potion());
-            //    objectList.Add(new Axe());
-
-            //    foreach (IDescribable d in objectList)
-            //    {
-            //        TxtOutput.Text +=   d.ShowInformation() + "\n\n";
-            //    }
-            //}
-
-
-
-
-
-
-
-
-
+          
 
 
 
 
         }
 
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Character myCharacter = null;
 
+            String character = CboxCharacter.Text;
+            switch (character)
+            {
+                case "Cleric":
+                    myCharacter = new Cleric();
+
+                    break;
+
+                case "Fighter":
+                    myCharacter = new Fighter();
+
+                    break;
+
+                case "Rouge":
+                    myCharacter = new Rouge();
+
+                    break;
+
+                case "Wizard":
+                    myCharacter = new Wizard();
+
+                    break;
+
+                default:
+                    myCharacter = null;
+                    MessageBox.Show("You MUST select a typ" + "e");
+                    break;
+
+            }
+
+            Weapon weapons = null;
+            String arma = CboxWeapon.Text;
+            switch (arma)
+            {
+                case "Axe":
+                    weapons = new Axe();
+                    break;
+                case "Sword":
+                    weapons = new Sword();
+                    break;
+                case "Fists":
+                    weapons = new Fists();
+                    break;
+
+                case "":
+                    MessageBox.Show("You MUST select a aquipment");
+                    break;
+
+            }
+            Armor meArmor = null;
+            String armadura = CboxArmor.Text;
+            switch (armadura)
+            {
+                case "Diamond":
+                    meArmor = new Diamond();
+                    break;
+                case "Adamantite":
+                    meArmor = new Adamantite();
+                    break;
+                case "Iron":
+                    meArmor = new Iron();
+                    break;
+                case "Leather":
+                    meArmor = new Leather();
+                    break;
+                case "":
+                    MessageBox.Show("You MUST select a Armor");
+                    break;
+            }
+            string NameCharacter = TbCha.Text;
+            string NameWeapon = TbWea.Text;
+            String NameArmor = TbArm.Text;
+
+            meArmor.Name = NameArmor;
+            myCharacter.Name = NameCharacter;
+            weapons.Name = NameWeapon;
+
+            personjes.Add(character);
+            personjes.Add(myCharacter.Name);
+            personjes.Add(meArmor.Name);
+            personjes.Add(armadura);
+            personjes.Add(weapons.Name);
+            personjes.Add(arma);
+            TxtOutput.Text = "";
+            foreach (string d in personjes)
+            {
+                TxtOutput.Text += d + "\n";
+            }
+        }
     }
 }
