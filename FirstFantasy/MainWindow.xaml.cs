@@ -1,5 +1,6 @@
 ﻿using FirstFantasy.Classes.Equipment;
 using FirstFantasy.Classes.Equipment.Armadura;
+using FirstFantasy.Classes.Equipment.Inventario;
 using FirstFantasy.Classes.Player;
 using FirstFantasy.Interfaces;
 using System;
@@ -26,8 +27,8 @@ namespace FirstFantasy
     public partial class MainWindow : Window
     {
         List<string> personjes = new List<string>();
-
-       
+        List<IDescribable> objectList = new List<IDescribable>();
+         
 
         public MainWindow()
         {
@@ -36,9 +37,9 @@ namespace FirstFantasy
 
         public void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
+            TxtOutput.Text = " ";
 
-            
-                Character myCharacter=null;
+            Character myCharacter=null;
                 
                 String character = CboxCharacter.Text;
                 switch (character)
@@ -121,8 +122,8 @@ namespace FirstFantasy
                     TxtOutput.Text = myCharacter.Taunt() + "\nArma:" + arma + "\n armadura: " + armadura + "\nDamage:" + weapons.Atacar()  + "\n\nINVENTARIO:\n";
 
                     //DESCRIPCION DE INVENTARIO
-                    List<IDescribable> objectList = new List<IDescribable>();
-                    objectList.Add(new Potion());
+
+                    
 
                     foreach (IDescribable d in objectList)
                     {
@@ -130,13 +131,10 @@ namespace FirstFantasy
                     }
                 }
             }
-            string NameCharacter = TbCha.Text;
-            string NameWeapon = TbWea.Text;
-            String NameArmor = TbArm.Text;
+            
 
-            meArmor.Name = NameArmor;
-            myCharacter.Name = NameCharacter;
-            weapons.Name = NameWeapon;
+             
+             
 
           
 
@@ -228,15 +226,47 @@ namespace FirstFantasy
 
             personjes.Add(character);
             personjes.Add(myCharacter.Name);
-            personjes.Add(meArmor.Name);
             personjes.Add(armadura);
-            personjes.Add(weapons.Name);
+            personjes.Add(meArmor.Name);
             personjes.Add(arma);
+            personjes.Add(weapons.Name);
             TxtOutput.Text = "";
             foreach (string d in personjes)
             {
                 TxtOutput.Text += d + "\n";
             }
+        }
+
+        private void Guardado_Click(object sender, RoutedEventArgs e)
+        {
+
+            Items NewItem = null;
+
+            string item = CboxItems.Text;
+            switch (item)
+            {
+                case "Potions":
+                    NewItem = new Potion();
+                    break;
+                case "Parchments":
+                    NewItem = new Parchment();
+                    break;
+                case "Keys":
+                    NewItem = new Keys();
+                    break;
+                case "GoldCoins":
+                    NewItem=new GoldCoins();
+                    break;
+                case "":
+                    MessageBox.Show("You MUST select a Armor");
+                    break;
+            }
+            if (NewItem != null)
+            {
+
+                objectList.Add(NewItem);
+            }
+            
         }
     }
 }

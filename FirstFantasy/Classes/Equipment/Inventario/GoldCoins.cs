@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FirstFantasy.Classes.Equipment.Inventario
 {
-    class GoldCoins : Inventario.Items
+    class GoldCoins : Items
     {
         public override string ShowInformation()
         {
